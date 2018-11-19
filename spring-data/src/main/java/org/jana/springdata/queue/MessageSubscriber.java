@@ -1,6 +1,5 @@
 package org.jana.springdata.queue;
 
-
 import org.springframework.data.redis.connection.Message;
 import org.springframework.data.redis.connection.MessageListener;
 
