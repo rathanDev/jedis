@@ -1,4 +1,13 @@
+Reference:
+https://redis.io/clients#java
+https://javapointers.com/tutorial/use-redis-java-using-jedis/
+
+
+##### -------------------------------------------------------------------------------------------------- #####
+
+
 Redis is a key - value store
+written in C
 a data structure server
 holds its db entirely in memory
 
@@ -18,7 +27,5 @@ redis-cli -h localhost -p 6379 -a pola
 CONFIG GET *
 
 
-Reference:
-https://redis.io/clients#java
-https://javapointers.com/tutorial/use-redis-java-using-jedis/
+
 
