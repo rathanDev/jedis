@@ -1,8 +1,8 @@
 package org.jana.springdata.config;
 
-import org.jana.springdata.queue.MessagePublisher;
-import org.jana.springdata.queue.MessagePublisherImpl;
-import org.jana.springdata.queue.MessageSubscriber;
+import org.jana.springdata.service.MessagePublisher;
+import org.jana.springdata.service.MessagePublisherImpl;
+import org.jana.springdata.service.MessageSubscriber;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
@@ -48,7 +48,7 @@ public class Config {
 
     @Bean
     ChannelTopic topic() {
-        return new ChannelTopic("pubsub:queue");
+        return new ChannelTopic("pubsub:service");
     }
 
 }
