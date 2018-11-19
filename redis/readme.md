@@ -1,20 +1,17 @@
 Reference:
 https://redis.io/clients#java
 https://javapointers.com/tutorial/use-redis-java-using-jedis/
+https://www.baeldung.com/spring-data-redis-tutorial
+https://dzone.com/articles/intro-to-redis-with-spring-boot
 
 
 ##### -------------------------------------------------------------------------------------------------- #####
 
 
-Redis is a key - value store
-written in C
-a data structure server
-holds its db entirely in memory
-
-
-pros:
-fast
-supports rich data sets
+Open source, in memory, key - value data store
+Used as database, cache and message broker
+Fast, coz written in C
+Supports rich data sets
     String
     Hashes
     Lists
