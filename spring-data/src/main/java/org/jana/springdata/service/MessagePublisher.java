@@ -1,4 +1,4 @@
-package org.jana.springdata.queue;
+package org.jana.springdata.service;
 
 public interface MessagePublisher {
 
