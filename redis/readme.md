@@ -6,6 +6,11 @@ holds its db entirely in memory
 pros:
 fast
 supports rich data sets
+    String
+    Hashes
+    Lists
+    Sets
+    Sorted Sets
 operations are atomic
 
 
