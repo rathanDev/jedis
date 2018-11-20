@@ -1,6 +1,6 @@
 package org.jana.jedispool.config;
 
-import org.jana.jedispool.model.Person;
+import org.jana.jedispool.model.Dog;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
@@ -28,8 +28,8 @@ public class RedisConfig {
     }
 
     @Bean
-    public RedisTemplate<String, Person> redisTemplate() {
-        RedisTemplate<String, Person> redisTemplate = new RedisTemplate<>();
+    public RedisTemplate<String, Dog> redisTemplate() {
+        RedisTemplate<String, Dog> redisTemplate = new RedisTemplate<>();
         redisTemplate.setConnectionFactory(redisConnectionFactory());
         redisTemplate.setEnableTransactionSupport(true);
         return redisTemplate;
