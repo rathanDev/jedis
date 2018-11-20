@@ -10,6 +10,15 @@ public class Dog implements Serializable {
     private String name;
     private String breed;
 
+    public Dog() {
+    }
+
+    public Dog(int id, String name, String breed) {
+        this.id = id;
+        this.name = name;
+        this.breed = breed;
+    }
+
     public int getId() {
         return id;
     }

@@ -13,7 +13,7 @@ import javax.annotation.PostConstruct;
 @Transactional
 public class DogDao {
 
-    private static final String KEY = "dog";
+    private static final String KEY = "333";
 
     @Autowired
     private RedisTemplate<String, Dog> redisTemplate;

@@ -1,2 +1,4 @@
-.idea/
-.redis.iml
+*/.idea/
+*/*.iml
+*/target/
+*/build/
