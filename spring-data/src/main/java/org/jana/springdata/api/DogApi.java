@@ -20,17 +20,16 @@ public class DogApi {
         return "Greetings from dog api";
     }
 
-    // localhost:8090/insert?key=m&value=milo
     @PostMapping("/insert")
     public ResponseEntity<String> insert(@RequestParam String key, @RequestParam String value) {
         Dog dog = new Dog();
         dog.setId(key);
         dog.setName(value);
+        dogRepository.add(dog);
         System.out.println("dog = " + dog);
         return ResponseEntity.ok("Barked");
     }
 
-    // localhost:8090/find-all
     @GetMapping("/find-all")
     public Map<String, String> findAll() {
         Map<Object, Object> all = dogRepository.findAll();
