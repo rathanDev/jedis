@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 public class DogController {
 
@@ -26,6 +28,11 @@ public class DogController {
         Dog dog = new Dog(Integer.parseInt(id), name, breed);
         dogService.addDog(dog);
         return "It barked when adding";
+    }
+
+    @GetMapping("/get-all")
+    public List<Dog> getAll() {
+        return dogService.getAll();
     }
 
 }

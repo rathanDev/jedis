@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.PostConstruct;
+import java.util.List;
 
 @Repository
 @Transactional
@@ -39,6 +40,11 @@ public class DogDao {
 
     public void remove(Dog dog) {
         listOperations.remove(KEY, 1, dog);
+    }
+
+    public List<Dog> getAll() {
+        Long size = listOperations.size(KEY);
+        return listOperations.range(KEY, 0, size);
     }
 
 }

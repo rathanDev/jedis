@@ -5,6 +5,8 @@ import org.jana.jedispool.model.Dog;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class DogService {
 
@@ -17,6 +19,10 @@ public class DogService {
 
     public void addDog(Dog dog) {
         dogDao.addDog(dog);
+    }
+
+    public List<Dog> getAll() {
+        return dogDao.getAll();
     }
 
 }
