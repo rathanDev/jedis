@@ -1,7 +1,6 @@
 package org.jana;
 
 import redis.clients.jedis.Jedis;
-import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.exceptions.JedisException;
 
 import java.util.Set;
@@ -17,7 +16,7 @@ public class App {
         Jedis jedis = new Jedis(host, port);
         jedis.connect();
         System.out.println("jedis = " + jedis);
-        jedis.auth("pola");
+//        jedis.auth("password");
 
         String memberKey = "members";
         String member1 = "Jana";
