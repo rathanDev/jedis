@@ -6,8 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
+import java.util.AbstractMap;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @RestController
 public class DogApi {
@@ -32,9 +33,17 @@ public class DogApi {
 
     @GetMapping("/find-all")
     public Map<String, String> findAll() {
-        Map<Object, Object> all = dogRepository.findAll();
-        System.out.println("all = " + all);
-        return new HashMap<>();
+        Map<Object, Object> dogMap = dogRepository.findAll();
+        System.out.println("dogMap = " + dogMap);
+        return dogMap
+                .entrySet()
+                .stream()
+                .map(e -> {
+                    String key = (String) e.getKey();
+                    String val = dogMap.get(key).toString();
+                    return new AbstractMap.SimpleEntry<>(key, val);
+                })
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
     }
 
 }
