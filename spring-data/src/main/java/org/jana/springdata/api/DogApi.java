@@ -21,12 +21,24 @@ public class DogApi {
         return "Greetings from dog api";
     }
 
-    @PostMapping("/insert")
-    public ResponseEntity<String> insert(@RequestParam String key, @RequestParam String value) {
+    @PostMapping("/add-name")
+    public ResponseEntity<String> add(@RequestParam String key,
+                                         @RequestParam String value) {
         Dog dog = new Dog();
         dog.setId(key);
         dog.setName(value);
-        dogRepository.add(dog);
+        dogRepository.addName(dog);
+        System.out.println("dog = " + dog);
+        return ResponseEntity.ok("Barked");
+    }
+
+    @PostMapping("/add-dog")
+    public ResponseEntity<String> addDog(@RequestParam String key,
+                                         @RequestParam String value) {
+        Dog dog = new Dog();
+        dog.setId(key);
+        dog.setName(value);
+        dogRepository.addDog(dog);
         System.out.println("dog = " + dog);
         return ResponseEntity.ok("Barked");
     }
@@ -44,6 +56,16 @@ public class DogApi {
                     return new AbstractMap.SimpleEntry<>(key, val);
                 })
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+    }
+
+    @GetMapping("/get-name")
+    public String getName(@RequestParam String id) {
+        return dogRepository.getName(id);
+    }
+
+    @GetMapping("/get-dog")
+    public Dog getDog(@RequestParam String id) {
+        return dogRepository.getDog(id);
     }
 
 }

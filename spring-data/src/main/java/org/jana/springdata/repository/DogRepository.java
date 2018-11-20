@@ -8,6 +8,14 @@ public interface DogRepository {
 
     Map<Object, Object> findAll();
 
-    void add(Dog dog);
+    void addName(Dog dog);
+
+    void addDog(Dog dog);
+
+    void delete(String id);
+
+    String getName(String id);
+
+    Dog getDog(String id);
 
 }

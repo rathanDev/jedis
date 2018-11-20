@@ -34,8 +34,25 @@ public class DogRepositoryImpl implements DogRepository {
     }
 
     @Override
-    public void add(Dog dog) {
+    public void addName(Dog dog) {
         this.hashOperations.put(KEY, dog.getId(), dog.getName());
+    }
+
+    @Override
+    public void addDog(Dog dog) {
+        this.hashOperations.put(KEY, dog.getId(), dog);
+    }
+
+    public void delete(String id) {
+        hashOperations.delete(id);
+    }
+
+    public Dog getDog(String id) {
+        return (Dog) hashOperations.get(KEY, id);
+    }
+
+    public String getName(String id) {
+        return (String) hashOperations.get(KEY, id);
     }
 
 }
