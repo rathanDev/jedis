@@ -23,6 +23,9 @@ operations are atomic
 redis-cli -h localhost -p 6379 -a pola
 CONFIG GET *
 
+redis-cli ping
+redis-cli shutdown
+
 
 
 
