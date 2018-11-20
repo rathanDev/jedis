@@ -44,7 +44,7 @@ public class DogRepositoryImpl implements DogRepository {
     }
 
     public void delete(String id) {
-        hashOperations.delete(id);
+        hashOperations.delete(KEY, id);
     }
 
     public Dog getDog(String id) {

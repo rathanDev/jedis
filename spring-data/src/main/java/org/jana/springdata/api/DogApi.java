@@ -68,4 +68,10 @@ public class DogApi {
         return dogRepository.getDog(id);
     }
 
+    @PostMapping("/chase-out")
+    public String chaseOut(@RequestParam String id) {
+        dogRepository.delete(id);
+        return "Chased";
+    }
+
 }
