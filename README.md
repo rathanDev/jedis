@@ -1,7 +1,7 @@
 Redis client of Java -> Jedis
 
-Redis is
-Open source, in memory, key - value data store
+Redis is 
+Open source, in memory, key - value data store 
 Used as database, cache and message broker
 Fast, coz written in C
 Supports rich data sets
